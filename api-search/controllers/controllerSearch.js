@@ -2,6 +2,11 @@ const mongoose = require('mongoose'),
 Product = mongoose.model('Product');
 
 exports.list_all_products = function(req, res, next) {
+    /**
+     * query condition
+     * callback
+     */
+    console.log(req.query, req.body, req.params)
     Product.find({}, function(error, product) {
         if(error) {
             res.send(error)
